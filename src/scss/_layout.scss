@@ -1,0 +1,17 @@
+.App {
+  min-height: 100vh;
+}
+
+.container {
+  padding: 0 $container-px-s;
+  margin: auto;
+
+  @media screen and (min-width: $tablet) {
+    padding: 0 $container-px-l;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 0;
+    max-width: 1280px;
+  }
+}

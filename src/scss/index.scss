@@ -1,2 +1,4 @@
-@import "./global";
-@import "./variables";
+@import "./_variables.scss";
+@import "./base.scss";
+@import "./_themed.scss";
+@import "./_layout.scss";
