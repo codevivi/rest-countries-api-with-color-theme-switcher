@@ -1,13 +1,13 @@
 import { useState } from "react";
-
-//config
-const themes = { dark: "theme-dark", light: "theme-light" };
+import Header from "./components/Header/Header";
+import useTheme from "./hooks/useTheme";
 
 function App() {
-  const [theme, setTheme] = useState(themes.dark);
+  const [theme, toggleTheme] = useTheme();
 
   return (
     <div className={"App " + theme}>
+      <Header toggleTheme={toggleTheme} theme={theme} />
       <div className="container">container</div>
     </div>
   );
