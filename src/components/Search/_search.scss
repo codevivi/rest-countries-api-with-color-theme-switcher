@@ -3,7 +3,6 @@
 .search-form {
   width: 100%;
   height: v.$search-h-s;
-  margin-bottom: v.$search-mb-s;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -19,7 +18,7 @@
   @media screen and (min-width: v.$tablet) {
     width: 60%;
     max-width: v.$search-w-l;
-    margin-bottom: v.$search-mb-l;
+    height: v.$search-h-l;
     font-size: 14px;
   }
 
@@ -31,7 +30,7 @@
   .search-form {
     color: v.$input-on-light;
     input {
-      color: v.$input-on-light;
+      color: v.$text-on-light;
       &::placeholder {
         color: v.$input-on-light;
       }

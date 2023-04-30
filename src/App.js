@@ -1,6 +1,7 @@
 import Header from "./components/Header/Header";
 import useTheme from "./hooks/useTheme";
 import Search from "./components/Search/Search";
+import Filter from "./components/Filter/Filter";
 
 function App() {
   const [theme, toggleTheme] = useTheme();
@@ -11,6 +12,7 @@ function App() {
       <div className="container">
         <div className="controls">
           <Search />
+          <Filter />
         </div>
       </div>
     </div>

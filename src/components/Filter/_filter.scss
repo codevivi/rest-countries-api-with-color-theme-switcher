@@ -1,0 +1,50 @@
+@use "./../../scss/utils/variables" as v;
+@use "./../../scss/utils/mixins" as m;
+.filter {
+  width: v.$filter-w;
+  height: v.$filter-h-s;
+  font-size: 12px;
+  position: relative;
+  .expand-btn {
+    @include m.shadow();
+    @include m.flexBetween();
+    border-radius: 6px;
+    padding: 0 2em;
+    width: v.$filter-w;
+    height: v.$filter-h-s;
+    width: 100%;
+  }
+
+  button {
+    font-size: inherit;
+  }
+  .selection {
+    position: absolute;
+    top: 100% + 20%;
+    width: 100%;
+    padding: 0.5em 2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    @include m.shadow();
+    button {
+      padding: 0.5em 0;
+      width: 100%;
+      text-align: left;
+      border-bottom: 1px solid transparent;
+      &:hover,
+      &:focus {
+        border-bottom: 1px solid v.$input-on-light;
+      }
+    }
+  }
+
+  @media screen and (min-width: v.$tablet) {
+    height: v.$filter-h-l;
+
+    font-size: 14px;
+    .expand-btn {
+      height: v.$filter-h-l;
+    }
+  }
+}

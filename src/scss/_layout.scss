@@ -27,10 +27,16 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  gap: v.$search-mb-l;
 
   @media screen and (min-width: v.$tablet) {
     flex-direction: row;
     align-items: center;
+    margin-bottom: v.$gap-s;
     justify-content: space-between;
+
+    @media screen and (min-width: v.$tablet) {
+      margin-bottom: v.$gap-s;
+    }
   }
 }
