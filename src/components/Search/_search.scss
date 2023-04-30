@@ -1,0 +1,51 @@
+@use "../../scss/utils/variables" as v;
+@use "../../scss/utils/mixins" as m;
+.search-form {
+  width: 100%;
+  height: v.$search-h-s;
+  margin-bottom: v.$search-mb-s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 6px;
+  font-size: 12px;
+  @include m.shadow();
+  button {
+    padding: 0 30px;
+  }
+  input {
+    flex: 1;
+  }
+  @media screen and (min-width: v.$tablet) {
+    width: 60%;
+    max-width: v.$search-w-l;
+    margin-bottom: v.$search-mb-l;
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: v.$desktop) {
+    width: v.$search-w-l;
+  }
+}
+.light {
+  .search-form {
+    color: v.$input-on-light;
+    input {
+      color: v.$input-on-light;
+      &::placeholder {
+        color: v.$input-on-light;
+      }
+    }
+  }
+}
+.dark {
+  .search-form {
+    color: v.$text-on-dark;
+    input {
+      color: v.$text-on-dark;
+      &::placeholder {
+        color: v.$text-on-dark;
+      }
+    }
+  }
+}

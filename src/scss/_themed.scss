@@ -1,18 +1,35 @@
+@use "./utils/variables" as v;
 .dark {
-  background-color: $dark-bg;
-  color: $text-on-dark;
+  background-color: v.$dark-bg;
+  color: v.$text-on-dark;
   .bg {
-    background-color: $dark;
+    background-color: v.$dark;
+  }
+
+  .search-form {
+    color: v.$text-on-dark;
+    input {
+      color: v.$text-on-dark;
+      &::placeholder {
+        color: v.$text-on-dark;
+      }
+    }
   }
 }
 
 .light {
-  background-color: $light-bg;
-  color: $text-on-light;
+  background-color: v.$light-bg;
+  color: v.$text-on-light;
   .bg {
-    background-color: $light;
+    background-color: v.$light;
   }
-  input {
-    color: $input-on-light;
+  .search-form {
+    color: v.$input-on-light;
+    input {
+      color: v.$input-on-light;
+      &::placeholder {
+        color: v.$input-on-light;
+      }
+    }
   }
 }

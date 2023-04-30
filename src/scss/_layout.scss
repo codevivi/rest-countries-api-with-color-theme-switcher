@@ -1,22 +1,36 @@
+@use "./utils/variables" as v;
 .App {
   min-height: 100vh;
-  padding-top: $header-h + $header-mb-s;
+  padding-top: v.$header-h + v.$header-mb-s;
 
-  @media screen and (min-width: $tablet) {
-    padding-top: $header-h + $header-mb-l;
+  @media screen and (min-width: v.$tablet) {
+    padding-top: v.$header-h + v.$header-mb-l;
   }
 }
 
 .container {
-  padding: 0 $container-px-s;
+  padding: 0 v.$container-px-s;
   margin: auto;
 
-  @media screen and (min-width: $tablet) {
-    padding: 0 $container-px-l;
+  @media screen and (min-width: v.$tablet) {
+    padding: 0 v.$container-px-l;
   }
 
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: v.$desktop) {
     padding: 0;
     max-width: 1280px;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  @media screen and (min-width: v.$tablet) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }

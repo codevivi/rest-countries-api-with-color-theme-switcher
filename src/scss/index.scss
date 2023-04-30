@@ -1,5 +1,3 @@
-@import "variables";
-@import "base";
-@import "themed";
-@import "layout";
-@import "header";
+@use "base";
+@use "themed";
+@use "layout";

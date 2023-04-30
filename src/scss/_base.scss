@@ -1,5 +1,5 @@
+@use "./utils/variables" as v;
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700;800;900&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -14,8 +14,11 @@ body {
   font-size: 14px;
   letter-spacing: -0.005em;
   h1 {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 800;
+    @media screen and (min-width: v.$tablet) {
+      font-size: 24px;
+    }
   }
 
   h2 {
@@ -26,7 +29,15 @@ body {
     color: inherit;
     border: none;
     outline: none;
+    background-color: inherit;
     cursor: pointer;
+  }
+  input {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-size: inherit;
+    cursor: text;
   }
   .details-page {
     font-size: 16px;

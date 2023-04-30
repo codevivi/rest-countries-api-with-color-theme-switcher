@@ -1,4 +1,5 @@
 import { BsMoon, BsSun } from "react-icons/bs";
+import "./_header.scss";
 function Header({ theme, toggleTheme }) {
   return (
     <header className="main-header bg">
