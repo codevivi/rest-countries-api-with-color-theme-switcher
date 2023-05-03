@@ -1,6 +1,10 @@
 import { BsMoon, BsSun } from "react-icons/bs";
 import "./_header.scss";
-function Header({ theme, toggleTheme }) {
+import { useContext } from "react";
+import { GlobalCtx } from "../../context/GlobalCtx";
+
+function Header() {
+  const { toggleTheme, theme } = useContext(GlobalCtx);
   return (
     <header className="main-header bg">
       <div className="container">

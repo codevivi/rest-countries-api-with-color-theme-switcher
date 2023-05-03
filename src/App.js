@@ -1,21 +1,23 @@
-import Header from "./components/Header/Header";
-import useTheme from "./hooks/useTheme";
-import Search from "./components/Search/Search";
-import Filter from "./components/Filter/Filter";
+import Home from "./components/pages/Home/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// use Hash router with github pages
+import Layout from "./components/pages/Layout/Layout";
+import { GlobalProvider } from "./context/GlobalCtx";
+import NotFound from "./components/pages/NotFound/NotFound";
 
 function App() {
-  const [theme, toggleTheme] = useTheme();
-
   return (
-    <div className={"App " + theme}>
-      <Header toggleTheme={toggleTheme} theme={theme} />
-      <div className="container">
-        <div className="controls">
-          <Search />
-          <Filter />
-        </div>
-      </div>
-    </div>
+    <GlobalProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            {/* <Route path="details" element={<Details />} /> */}
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </GlobalProvider>
   );
 }
 
