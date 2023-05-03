@@ -6,7 +6,7 @@ function Search() {
     console.log(e);
   };
   return (
-    <form className="search-form bg">
+    <form className="search-form bg text-shaded">
       <button onClick={handleSubmit}>
         <BiSearch id="icon" />
       </button>

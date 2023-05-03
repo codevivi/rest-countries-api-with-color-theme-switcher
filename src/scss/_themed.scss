@@ -1,16 +1,19 @@
-@use "./utils/variables" as v;
+@use "./utils/variables" as *;
 .dark {
-  background-color: v.$dark-bg;
-  color: v.$text-on-dark;
+  background-color: $dark-bg;
+  color: $text-on-dark;
   .bg {
-    background-color: v.$dark;
+    background-color: $dark;
   }
 }
 
 .light {
-  background-color: v.$light-bg;
-  color: v.$text-on-light;
+  background-color: $light-bg;
+  color: $text-on-light;
   .bg {
-    background-color: v.$light;
+    background-color: $light;
+  }
+  .text-shaded {
+    color: $text-shaded;
   }
 }

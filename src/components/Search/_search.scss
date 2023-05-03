@@ -1,50 +1,27 @@
-@use "../../scss/utils/variables" as v;
-@use "../../scss/utils/mixins" as m;
+@use "../../scss/utils/variables" as *;
+@use "../../scss/utils/mixins" as *;
 .search-form {
   width: 100%;
-  height: v.$search-h-s;
+  min-width: fit-content;
+  height: $input-box-h-s;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border-radius: 6px;
+  border-radius: $radius-l;
   font-size: 12px;
-  @include m.shadow();
+  overflow: hidden;
+  @include shadow();
   button {
-    padding: 0 30px;
+    height: 100%;
+    padding: 0 24px 0 30px;
   }
   input {
     flex: 1;
   }
-  @media screen and (min-width: v.$tablet) {
+  @media screen and (min-width: $tablet) {
     width: 60%;
-    max-width: v.$search-w-l;
-    height: v.$search-h-l;
+    max-width: 480px;
+    height: $input-box-h-l;
     font-size: 14px;
-  }
-
-  @media screen and (min-width: v.$desktop) {
-    width: v.$search-w-l;
-  }
-}
-.light {
-  .search-form {
-    color: v.$input-on-light;
-    input {
-      color: v.$text-on-light;
-      &::placeholder {
-        color: v.$input-on-light;
-      }
-    }
-  }
-}
-.dark {
-  .search-form {
-    color: v.$text-on-dark;
-    input {
-      color: v.$text-on-dark;
-      &::placeholder {
-        color: v.$text-on-dark;
-      }
-    }
   }
 }
