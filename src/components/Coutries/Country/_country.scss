@@ -1,0 +1,26 @@
+@use "./../../../scss/utils/mixins" as *;
+@use "./../../../scss/utils/variables" as *;
+.country-card {
+  position: relative;
+  @include shadow();
+  border-radius: $radius-l;
+  overflow: hidden;
+  strong {
+    font-weight: bold;
+    line-height: 19px;
+    letter-spacing: -0.015em;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    box-shadow: 1px 0 4px hsla(0, 0%, 52%, 0.226);
+  }
+  .body {
+    padding: 28px 25px;
+    .title {
+      margin-bottom: 25px;
+    }
+  }
+}
