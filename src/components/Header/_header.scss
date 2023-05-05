@@ -1,10 +1,13 @@
 @use "./../../scss/utils/variables" as *;
 @use "./../../scss/utils/mixins" as *;
 .main-header {
-  position: fixed;
-  top: 0;
   width: 100%;
   box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.12);
+  margin-bottom: $header-mb-s;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: $header-mb-l;
+  }
+
   h1 {
     font-size: 16px;
     font-weight: 800;

@@ -1,11 +1,6 @@
 @use "./utils/variables" as *;
 .App {
   min-height: 100vh;
-  padding-top: $header-h + $header-mb-s;
-
-  @media screen and (min-width: $tablet) {
-    padding-top: $header-h + $header-mb-l;
-  }
 }
 
 .container {
@@ -20,4 +15,24 @@
     padding: 0;
     max-width: 1280px;
   }
+}
+
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-gap: $gap-s;
+  grid-template-columns: repeat(auto-fit, $card-w);
+  justify-content: center;
+  grid-auto-rows: auto;
+  grid-auto-flow: row;
+
+  @media screen and (min-width: $desktop) {
+    grid-gap: $gap-l $gap-l;
+  }
+}
+
+.grid-item {
+  width: $card-w;
+  min-height: 336px;
+  min-width: fit-content;
 }

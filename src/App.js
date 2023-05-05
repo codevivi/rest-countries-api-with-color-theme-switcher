@@ -14,6 +14,7 @@ function App() {
             <Route index element={<Home />} />
             {/* <Route path="details" element={<Details />} /> */}
             <Route path="*" element={<NotFound />} />
+            {/*this won't work with HashRouter */}
           </Route>
         </Routes>
       </BrowserRouter>
