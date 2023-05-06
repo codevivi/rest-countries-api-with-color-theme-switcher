@@ -4,6 +4,7 @@ import { GlobalCtx } from "../../context/GlobalCtx";
 
 function Countries() {
   const { allCountries, apiError } = useContext(GlobalCtx);
+
   if (apiError) {
     return <h2>Sorry, can't connect to API...</h2>;
   }
@@ -11,11 +12,11 @@ function Countries() {
   if (allCountries === null) {
     return <h2>Loading...</h2>;
   }
-  console.log(allCountries);
+
   return (
     <div className="grid-container">
-      {allCountries.map((country) => (
-        <Country country={country} />
+      {[...allCountries].map(([_, country]) => (
+        <Country key={country.code} country={country} />
       ))}
     </div>
   );

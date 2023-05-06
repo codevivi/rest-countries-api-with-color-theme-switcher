@@ -5,7 +5,7 @@ import useData from "../hooks/data/useData";
 export const GlobalCtx = createContext();
 export function GlobalProvider({ children }) {
   const [theme, toggleTheme] = useTheme();
-  const [allCountries, apiError] = useData();
+  const [allCountries, codedNames, apiError] = useData();
 
-  return <GlobalCtx.Provider value={{ allCountries, apiError, theme, toggleTheme }}>{children}</GlobalCtx.Provider>;
+  return <GlobalCtx.Provider value={{ allCountries, codedNames, apiError, theme, toggleTheme }}>{children}</GlobalCtx.Provider>;
 }
