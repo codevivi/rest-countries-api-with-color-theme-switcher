@@ -3,7 +3,7 @@ import Country from "./Country/Country";
 import { GlobalCtx } from "../../context/GlobalCtx";
 
 function Countries() {
-  const { allCountries, apiError, search } = useContext(GlobalCtx);
+  const { allCountries, apiError, searchMatchedNames } = useContext(GlobalCtx);
 
   if (apiError) {
     return <h2>Sorry, can't connect to API...</h2>;
@@ -13,9 +13,18 @@ function Countries() {
     return <h2>Loading...</h2>;
   }
 
-  if (search) {
-    const country = allCountries.get(search);
-    return country ? <Country key={country.code} country={country} /> : <h2>Not found</h2>;
+  if (searchMatchedNames) {
+    if (!searchMatchedNames.length) {
+      return <h2>Sorry, couldn't find any matches in country names. </h2>;
+    }
+    const countries = searchMatchedNames.map((name) => allCountries.get(name));
+    return (
+      <div className="grid-container">
+        {countries.map((country) => (
+          <Country key={country.code} country={country} />
+        ))}
+      </div>
+    );
   }
 
   return (

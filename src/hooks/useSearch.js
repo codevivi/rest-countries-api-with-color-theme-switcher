@@ -1,9 +1,8 @@
 import { useState } from "react";
 
 function useSearch() {
-  const [search, setSearch] = useState("");
-
-  return [search, setSearch];
+  const [searchMatchedNames, setSearchMatchedNames] = useState("");
+  return [searchMatchedNames, setSearchMatchedNames];
 }
 
 export default useSearch;

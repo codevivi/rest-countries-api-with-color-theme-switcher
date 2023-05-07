@@ -1,26 +1,36 @@
 import { BiSearch } from "react-icons/bi";
 import "./_search.scss";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GlobalCtx } from "../../context/GlobalCtx";
 function Search() {
-  const { setSearch } = useContext(GlobalCtx);
+  const { setSearchMatchedNames, countryNamesArr } = useContext(GlobalCtx);
   const [searchText, setSearchText] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSearch(searchText);
-  };
+  useEffect(() => {
+    if (countryNamesArr === null) {
+      return;
+    }
+    if (!searchText) {
+      setSearchMatchedNames(null);
+      return;
+    }
+    const match = countryNamesArr.filter((name) => {
+      const regex = new RegExp(searchText, "gi");
+      return name.match(regex);
+    });
+
+    setSearchMatchedNames(match);
+  }, [searchText, countryNamesArr, setSearchMatchedNames]);
 
   const handleChange = (e) => {
     setSearchText(e.target.value);
   };
+
   return (
-    <form className="search-form bg text-shaded">
-      <button onClick={handleSubmit}>
-        <BiSearch id="icon" />
-      </button>
+    <div className="search-form bg text-shaded">
+      <BiSearch className="icon" />
       <input value={searchText} onChange={handleChange} type="text" placeholder="Search for a country..." />
-    </form>
+    </div>
   );
 }
 

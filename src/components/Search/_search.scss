@@ -1,6 +1,7 @@
 @use "../../scss/utils/variables" as *;
 @use "../../scss/utils/mixins" as *;
 .search-form {
+  position: relative;
   width: 100%;
   min-width: fit-content;
   height: $input-box-h-s;
@@ -11,12 +12,15 @@
   font-size: 12px;
   overflow: hidden;
   @include shadow();
-  button {
+  .icon {
+    position: absolute;
+    left: 30px;
     height: 100%;
-    padding: 0 24px 0 30px;
+    color: inherit;
   }
   input {
     flex: 1;
+    text-indent: 54px;
   }
   @media screen and (min-width: $tablet) {
     width: 60%;

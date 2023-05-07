@@ -6,8 +6,8 @@ import useSearch from "../hooks/useSearch";
 export const GlobalCtx = createContext();
 export function GlobalProvider({ children }) {
   const [theme, toggleTheme] = useTheme();
-  const [search, setSearch] = useSearch();
-  const [allCountries, codedNames, apiError] = useData();
+  const [searchMatchedNames, setSearchMatchedNames] = useSearch();
+  const [allCountries, codedNames, countryNamesArr, apiError] = useData();
 
-  return <GlobalCtx.Provider value={{ allCountries, codedNames, apiError, search, setSearch, theme, toggleTheme }}>{children}</GlobalCtx.Provider>;
+  return <GlobalCtx.Provider value={{ allCountries, codedNames, countryNamesArr, apiError, searchMatchedNames, setSearchMatchedNames, theme, toggleTheme }}>{children}</GlobalCtx.Provider>;
 }
