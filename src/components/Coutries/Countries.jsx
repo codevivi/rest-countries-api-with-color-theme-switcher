@@ -3,7 +3,7 @@ import Country from "./Country/Country";
 import { GlobalCtx } from "../../context/GlobalCtx";
 
 function Countries() {
-  const { allCountries, apiError, searchMatchedNames } = useContext(GlobalCtx);
+  const { allCountries, apiError, searchMatchedNames, filterRegion } = useContext(GlobalCtx);
 
   if (apiError) {
     return <h2>Sorry, can't connect to API...</h2>;
@@ -25,6 +25,10 @@ function Countries() {
         ))}
       </div>
     );
+  }
+
+  if (filterRegion !== null) {
+    return <div className="grid-container">{[...allCountries].map(([_, country]) => (filterRegion !== country.region ? null : <Country key={country.code} country={country} />))}</div>;
   }
 
   return (
