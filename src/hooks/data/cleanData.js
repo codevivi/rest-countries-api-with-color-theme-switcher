@@ -31,20 +31,5 @@ export const customizeCountries = (countries) => {
     namedCountriesMap.set(c.name.common, country);
   }
 
-  // return countries.map((c) => ({
-  //   languages: c.languages ? Object.values(c.languages).join(", ") : EMPTY_FIELD,
-  //   topLevelDomain: c.tld ? c.tld[0] : EMPTY_FIELD,
-  //   capital: c.capital ? c.capital[0] : EMPTY_FIELD,
-  //   name: c.name.common,
-  //   nativeName: getNativeName(c),
-  //   population: c.population.toLocaleString(),
-  //   region: c.region,
-  //   subRegion: c.subregion,
-  //   flagUrl: c.flags.png,
-  //   flagAlt: c.flags.alt,
-  //   currencies: c.currencies,
-  //   borders: c.borders,
-  //   code: c.cca3,
-  // }));
   return { namedCountriesMap: namedCountriesMap, codedNamesMap: codedNamesMap };
 };
