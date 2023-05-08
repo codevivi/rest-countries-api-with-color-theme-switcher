@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { MdExpandMore, MdExpandLess, MdOutlineFormatAlignCenter } from "react-icons/md";
+import { MdExpandMore, MdExpandLess } from "react-icons/md";
 import "./_filter.scss";
 import { GlobalCtx } from "../../context/GlobalCtx";
 function Filter() {
