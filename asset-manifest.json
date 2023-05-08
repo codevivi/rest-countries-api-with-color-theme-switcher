@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/bank-u1/rest-countries-api-with-color-theme-switcher/static/css/main.bcb1112c.css",
-    "main.js": "/bank-u1/rest-countries-api-with-color-theme-switcher/static/js/main.a829b390.js",
-    "index.html": "/bank-u1/rest-countries-api-with-color-theme-switcher/index.html",
-    "main.bcb1112c.css.map": "/bank-u1/rest-countries-api-with-color-theme-switcher/static/css/main.bcb1112c.css.map",
-    "main.a829b390.js.map": "/bank-u1/rest-countries-api-with-color-theme-switcher/static/js/main.a829b390.js.map"
+    "main.css": "/rest-countries-api-with-color-theme-switcher/static/css/main.bcb1112c.css",
+    "main.js": "/rest-countries-api-with-color-theme-switcher/static/js/main.a829b390.js",
+    "index.html": "/rest-countries-api-with-color-theme-switcher/index.html",
+    "main.bcb1112c.css.map": "/rest-countries-api-with-color-theme-switcher/static/css/main.bcb1112c.css.map",
+    "main.a829b390.js.map": "/rest-countries-api-with-color-theme-switcher/static/js/main.a829b390.js.map"
   },
   "entrypoints": [
     "static/css/main.bcb1112c.css",
