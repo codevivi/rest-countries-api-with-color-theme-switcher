@@ -3,7 +3,7 @@ import "./_country.scss";
 function Country({ country }) {
   return (
     <div className="grid-item bg country-card">
-      <img src={country.flagUrl} alt="country.flagAlt" />
+      <img src={country.flagUrl} alt={country.flagAlt} loading="lazy" />
       <div className="body">
         <h2 className="title">{country.name}</h2>
         <p>
