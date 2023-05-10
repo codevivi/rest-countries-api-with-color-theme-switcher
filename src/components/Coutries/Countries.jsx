@@ -1,6 +1,7 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import Country from "./Country/Country";
 import { GlobalCtx } from "../../context/GlobalCtx";
+import { Link } from "react-router-dom";
 
 function Countries() {
   const { allCountries, apiError, searchRegex, searchParams, filterRegion } = useContext(GlobalCtx);
@@ -55,7 +56,9 @@ function Countries() {
   return (
     <div className="grid-container">
       {displayCountries.map(([_, country]) => (
-        <Country key={country.code} country={country} />
+        <Link key={country.code} to={"/details/" + country.name}>
+          <Country country={country} />
+        </Link>
       ))}
     </div>
   );

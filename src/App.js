@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/pages/Layout/Layout";
 import { GlobalProvider } from "./context/GlobalCtx";
 import NotFound from "./components/pages/NotFound/NotFound";
+import Details from "./components/pages/Details/Details";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            {/* <Route path="details" element={<Details />} /> */}
+            <Route exact path="details/:countryName" element={<Details />} />
             <Route path="*" element={<NotFound />} />
             {/*this won't work with HashRouter */}
           </Route>

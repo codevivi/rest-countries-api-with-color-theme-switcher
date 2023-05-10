@@ -19,6 +19,7 @@ function useData() {
 
   useEffect(() => {
     if (allCountries === null) {
+      console.log("fetching all countries");
       axios
         .get(URL + "all?fields=" + FIELDS.join(","))
         .then((res) => {

@@ -1,0 +1,12 @@
+@use "../../../scss/utils/variables" as *;
+@use "../../../scss/utils/mixins" as *;
+.details {
+  .button.large {
+    margin-top: 1em;
+    margin-bottom: 64px;
+    @media screen and (min-width: $tablet) {
+      margin-top: 2em;
+      margin-bottom: 78px;
+    }
+  }
+}

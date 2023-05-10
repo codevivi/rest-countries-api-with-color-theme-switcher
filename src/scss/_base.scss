@@ -13,12 +13,14 @@ body {
 .App {
   font-size: 14px;
   letter-spacing: -0.005em;
-  button {
+  button,
+  a {
     color: inherit;
     border: none;
     outline: none;
     background-color: inherit;
     cursor: pointer;
+    text-decoration: none;
   }
   input {
     background-color: inherit;
