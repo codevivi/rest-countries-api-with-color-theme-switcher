@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { customizeCountries } from "./cleanData";
 import axios from "axios";
-const URL = "https://restcountries.com/v3.1/";
-const FIELDS = ["languages", "tld", "capital", "name", "population", "region", "subregion", "flags", "currencies", "borders", "cca3"];
+// const URL = "https://restcountries.com/v3.1/"; // api not working anymore
+const URL = "countries-with-required-fields.json"; //using local json file
 
 function useData() {
   const [countryNamesArr, setCountryNamesArr] = useState(null);
@@ -19,11 +19,10 @@ function useData() {
 
   useEffect(() => {
     if (allCountries === null) {
-      console.log("fetching all countries");
       axios
-        .get(URL + "all?fields=" + FIELDS.join(","))
+        .get(URL, { headers: { "content-Type": "application/json", Accept: "application/json" } })
         .then((res) => {
-          updateData(res.data);
+          return updateData(res.data);
         })
         .catch((e) => {
           setApiError(true);

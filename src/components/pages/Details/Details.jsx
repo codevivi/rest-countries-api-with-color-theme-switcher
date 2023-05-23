@@ -73,11 +73,16 @@ function Details() {
             </p>
             <div>
               <strong>Border Countries: </strong>
-              {country.borders.map((borderCountryName) => (
-                <Link key={borderCountryName} to={"/details/" + borderCountryName} className="button bg">
-                  {borderCountryName}
-                </Link>
-              ))}
+
+              {!country.borders.length ? (
+                <span>No terrain borders</span>
+              ) : (
+                country.borders.map((borderCountryName) => (
+                  <Link key={borderCountryName} to={"/details/" + borderCountryName} className="button bg">
+                    {borderCountryName}
+                  </Link>
+                ))
+              )}
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ export const customizeCountries = (countries) => {
       flagUrl: c.flags.png,
       flagAlt: c.flags.alt,
       currencies: c.currencies,
-      borders: c.borders,
+      borders: c.borders ? c.borders : [],
       code: c.cca3,
     };
     namedCountriesMap.set(c.name.common, country);
