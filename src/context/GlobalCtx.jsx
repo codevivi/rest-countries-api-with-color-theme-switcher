@@ -1,4 +1,4 @@
-import { createContext, useEffect } from "react";
+import { createContext } from "react";
 import useTheme from "../hooks/useTheme";
 import useData from "../hooks/data/useData";
 import useSearch from "../hooks/useSearch";

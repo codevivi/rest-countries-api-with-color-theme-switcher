@@ -7,13 +7,10 @@ import { Outlet } from "react-router-dom";
 function Layout() {
   const { theme } = useContext(GlobalCtx);
   const location = useLocation();
-  const { pathTrack, dispatchPathTrack } = useContext(GlobalCtx);
-  console.log(pathTrack.paths);
+  const { dispatchPathTrack } = useContext(GlobalCtx);
 
   useEffect(() => {
-    // if (location.pathname !== pathTrack.paths[pathTrack.paths.length]) {
     dispatchPathTrack({ type: "add", path: location.pathname });
-    // }
   }, [location, dispatchPathTrack]);
 
   return (
