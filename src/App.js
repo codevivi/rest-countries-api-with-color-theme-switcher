@@ -1,5 +1,5 @@
 import Home from "./components/pages/Home/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 // use Hash router with github pages
 import Layout from "./components/pages/Layout/Layout";
 import { GlobalProvider } from "./context/GlobalCtx";
