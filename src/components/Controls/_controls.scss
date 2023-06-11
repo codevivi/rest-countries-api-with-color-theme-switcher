@@ -12,9 +12,6 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-
-    @media screen and (min-width: $tablet) {
-      margin-bottom: $gap-l;
-    }
+    margin-bottom: $header-mb-l;
   }
 }

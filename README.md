@@ -8,9 +8,9 @@ Status: working on...
 
 This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-<!-- 🌐 **Site published at**: [https://codevivi.github.io/rest-countries-api-with-color-theme-switcher](https://codevivi.github.io/rest-countries-api-with-color-theme-switcher) -->
+🌐 **Site published at**: [https://codevivi.github.io/rest-countries-api-with-color-theme-switcher/#/](https://codevivi.github.io/rest-countries-api-with-color-theme-switcher/#/)
 
-<!-- **Solution URL**:  -->
+**Solution URL**: [at fronendmentor](https://www.frontendmentor.io/solutions/countries-rest-react-app-with-colour-theme-switcher-Nv1pbnC8Rz)
 
 🎯 **Goals:**
 
@@ -20,7 +20,7 @@ Users should be able to:
 - [x] Search for a country using an `input` field
 - [x] Filter countries by region
 - [x] Click on a country to see more detailed information on a separate page
-- [x] Click through to the border countries on the detail page (NEED MORE STYLES)
+- [x] Click through to the border countries on the detail page
 - [x] Toggle the color scheme between light and dark mode _(optional)_
 
 ## 🧰 Building with

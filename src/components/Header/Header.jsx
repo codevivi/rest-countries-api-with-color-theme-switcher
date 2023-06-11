@@ -13,12 +13,12 @@ function Header() {
           <h1> Where in the world?</h1>
         </Link>
         <button className="bg theme-toggler" onClick={() => toggleTheme()}>
-          {theme === "dark" && (
+          {theme === "light" && (
             <>
               <BsMoon /> <span>Dark Mode </span>
             </>
           )}
-          {theme === "light" && (
+          {theme === "dark" && (
             <>
               <BsSun />
               <span> Light Mode</span>
