@@ -56,7 +56,7 @@ function Countries() {
   return (
     <div className="grid-container">
       {displayCountries.map(([_, country]) => (
-        <Link key={country.code} to={"/details/" + country.name} state={{ detailsFirstPath: "/details/" + country.name }}>
+        <Link key={country.code} to={"/details/" + encodeURIComponent(country.name)} state={{ detailsFirstPath: "/details/" + country.name }}>
           <Country country={country} />
         </Link>
       ))}
