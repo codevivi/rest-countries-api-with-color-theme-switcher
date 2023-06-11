@@ -1,6 +1,6 @@
 # 🪧 Frontend Mentor - REST Countries API with color theme switcher solution
 
-<!-- ![alt app screenshot](./assets/images/screenshot.png) -->
+![alt app screenshot](./screenshot.png)
 
 Status: working on...
 
