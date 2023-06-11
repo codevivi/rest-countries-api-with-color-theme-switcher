@@ -9,7 +9,7 @@ import Details from "./components/pages/Details/Details";
 function App() {
   return (
     <GlobalProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -18,7 +18,7 @@ function App() {
             {/*this won't work with HashRouter */}
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </GlobalProvider>
   );
 }
