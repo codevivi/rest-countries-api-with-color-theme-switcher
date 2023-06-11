@@ -97,7 +97,7 @@ function Details() {
                   <span>No terrain borders</span>
                 ) : (
                   country.borders.map((borderCountryName) => (
-                    <Link key={borderCountryName} to={"/details/" + borderCountryName} className="button bg">
+                    <Link key={borderCountryName} to={"/details/" + encodeURIComponent(borderCountryName)} className="button bg">
                       {borderCountryName}
                     </Link>
                   ))
