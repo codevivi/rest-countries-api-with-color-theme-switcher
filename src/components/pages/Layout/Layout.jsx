@@ -16,9 +16,9 @@ function Layout() {
   return (
     <div className={"App " + theme}>
       <Header />
-      <div className="container">
+      <main className="container">
         <Outlet />
-      </div>
+      </main>
     </div>
   );
 }
