@@ -19,12 +19,12 @@
     justify-content: flex-start;
     gap: 50px;
     .flag-box {
-      width: 100%;
-      max-width: 560px;
+      flex: 1;
       img {
         display: block;
         width: 100%;
         height: auto;
+        max-width: 400px;
       }
     }
 
@@ -32,7 +32,80 @@
       flex-direction: row;
       align-items: flex-start;
       justify-content: space-between;
+      gap: 50px;
+      .flag-box {
+        img {
+          max-width: 560px;
+        }
+      }
+    }
+    @media screen and (min-width: $desktop) {
       gap: 120px;
+      .flag-box {
+        img {
+          max-width: 560px;
+        }
+      }
+    }
+    .content-box {
+      flex: 1;
+      h2 {
+        margin-bottom: 30px;
+        font-weight: 800;
+        font-size: 23px;
+        width: fit-content;
+        line-height: 1;
+        @media screen and (min-width: $desktop) {
+          font-size: 32px;
+          font-weight: 900px;
+          letter-spacing: -2.5%;
+        }
+      }
+      .stats {
+        display: flex;
+        flex-direction: column;
+        gap: 39px;
+        .stats-part {
+          p {
+            font-size: 14px;
+            margin-bottom: 1em;
+            display: inline-flex;
+            width: 100%;
+            gap: 0.3em;
+            font-weight: 600;
+          }
+          span {
+            opacity: 0.8;
+          }
+          strong {
+            min-width: fit-content;
+          }
+
+          @media screen and (min-width: $tablet) {
+            p {
+              font-size: 1rem;
+            }
+          }
+          @media screen and (min-width: $desktop) {
+            p {
+              font-size: 16px;
+              letter-spacing: -1.5%;
+            }
+          }
+        }
+        .stats-part-borders {
+          strong {
+            display: block;
+            margin-bottom: 0.5em;
+            width: 100%;
+          }
+          .borders {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8em;
+          }
+        }
+      }
     }
   }
 }

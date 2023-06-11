@@ -49,54 +49,60 @@ function Details() {
 
       <div className="flex">
         <div className="flag-box">
-          <img src={country.flagUrl} alt={country.flagAlt} />
+          <img src={country.flagSvgUrl} alt={country.flagAlt} />
         </div>
         <div className="content-box">
           <h2>{country.name}</h2>
           <div className="stats">
-            <p>
-              <strong>Native Name: </strong>
-              <span>{country.nativeName}</span>
-            </p>
-            <p>
-              <strong>Population: </strong>
-              <span>{country.population}</span>
-            </p>
-            <p>
-              <strong>Region: </strong>
-              <span>{country.region}</span>
-            </p>
+            <div className="stats-part">
+              <p>
+                <strong>Native Name: </strong>
+                <span>{country.nativeName}</span>
+              </p>
+              <p>
+                <strong>Population: </strong>
+                <span>{country.population}</span>
+              </p>
+              <p>
+                <strong>Region: </strong>
+                <span>{country.region}</span>
+              </p>
 
-            <p>
-              <strong>Sub Region: </strong>
-              <span>{country.subRegion}</span>
-            </p>
-            <p>
-              <strong>Capital: </strong>
-              <span>{country.capital}</span>
-            </p>
+              <p>
+                <strong>Sub Region: </strong>
+                <span>{country.subRegion}</span>
+              </p>
+              <p>
+                <strong>Capital: </strong>
+                <span>{country.capital}</span>
+              </p>
+            </div>
+            <div className="stats-part">
+              <p>
+                <strong>Top Level Domain: </strong>
+                <span>{country.topLevelDomain}</span>
+              </p>
 
-            <p>
-              <strong>Top Level Domain: </strong>
-              <span>{country.topLevelDomain}</span>
-            </p>
-
-            <p>
-              <strong>Languages: </strong>
-              <span>{country.languages}</span>
-            </p>
-            <div>
-              <strong>Border Countries: </strong>
-
-              {!country.borders.length ? (
-                <span>No terrain borders</span>
-              ) : (
-                country.borders.map((borderCountryName) => (
-                  <Link key={borderCountryName} to={"/details/" + borderCountryName} className="button bg">
-                    {borderCountryName}
-                  </Link>
-                ))
-              )}
+              <p>
+                <strong>Languages: </strong>
+                <span>{country.languages}</span>
+              </p>
+            </div>
+            <div className="stats-part stats-part-borders">
+              <p>
+                <strong>Border Countries: </strong>
+              </p>
+              <div className="borders">
+                {!country.borders.length ? (
+                  <span>No terrain borders</span>
+                ) : (
+                  country.borders.map((borderCountryName) => (
+                    <Link key={borderCountryName} to={"/details/" + borderCountryName} className="button bg">
+                      {borderCountryName}
+                    </Link>
+                  ))
+                )}
+              </div>
             </div>
           </div>
         </div>

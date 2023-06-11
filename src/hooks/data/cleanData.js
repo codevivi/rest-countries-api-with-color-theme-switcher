@@ -24,6 +24,7 @@ export const customizeCountries = (countries) => {
       region: c.region,
       subRegion: c.subregion,
       flagUrl: c.flags.png,
+      flagSvgUrl: c.flags.svg,
       flagAlt: c.flags.alt,
       currencies: c.currencies,
       borders: c.borders ? c.borders : [],
