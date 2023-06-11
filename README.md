@@ -14,7 +14,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 Users should be able to:
 
-- [x] See all countries from the [REST Countries API](https://restcountries.com) on the homepage. **API not working anymore, so using local json file for now.**
+- [x] See all countries from the [REST Countries API](https://restcountries.com) on the homepage. **Fetching data from local json file**
 - [x] Search for a country using an `input` field
 - [x] Filter countries by region
 - [x] Click on a country to see more detailed information on a separate page
