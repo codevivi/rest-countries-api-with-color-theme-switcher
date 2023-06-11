@@ -8,7 +8,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 🌐 **Site published at**: [https://codevivi.github.io/rest-countries-api-with-color-theme-switcher/#/](https://codevivi.github.io/rest-countries-api-with-color-theme-switcher/#/)
 
-**Solution URL**: [at fronendmentor](https://www.frontendmentor.io/solutions/countries-rest-react-app-with-colour-theme-switcher-Nv1pbnC8Rz)
+**Solution URL**: [at frontendmentor](https://www.frontendmentor.io/solutions/countries-rest-react-app-with-colour-theme-switcher-Nv1pbnC8Rz)
 
 🎯 **Goals:**
 
