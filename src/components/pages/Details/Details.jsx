@@ -1,4 +1,4 @@
-import { Link, redirect, useNavigate, useParams } from "react-router-dom";
+import { Link, redirect, useLocation, useNavigate, useParams } from "react-router-dom";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { useContext, useEffect, useState } from "react";
 import { GlobalCtx } from "../../../context/GlobalCtx";
@@ -6,7 +6,8 @@ import "../../../scss/_buttons.scss";
 import "./_details.scss";
 function Details() {
   const { countryName } = useParams();
-  const { allCountries, codedNames } = useContext(GlobalCtx);
+  const { allCountries, codedNames, pathTrack, dispatchPathTrack } = useContext(GlobalCtx);
+  const location = useLocation();
   const [country, setCountry] = useState(null);
   const navigate = useNavigate();
 
@@ -26,9 +27,22 @@ function Details() {
     return <h2>Country {countryName} not found.</h2>;
   }
 
+  const handleGoBack = () => {
+    dispatchPathTrack({ type: "remove" });
+    if (pathTrack.paths.length) {
+      if (pathTrack.paths.length === 1 && location.pathname === pathTrack.paths[0]) {
+        return navigate("/");
+      }
+    }
+    return navigate(-1);
+  };
+  if (allCountries === null) {
+    return <h1>Loading</h1>;
+  }
+
   return (
     <div className="details">
-      <button onClick={() => navigate(-1)} className="bg button large">
+      <button onClick={handleGoBack} className="bg button large">
         <HiArrowLongLeft />
         <span>Back</span>
       </button>

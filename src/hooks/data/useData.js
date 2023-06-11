@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { customizeCountries } from "./cleanData";
 import axios from "axios";
 // const URL = "https://restcountries.com/v3.1/"; // api not working anymore
-const URL = "countries-with-required-fields.json"; //using local json file
+const URL = "/countries-with-required-fields.json"; //using local json file
 
 function useData() {
   const [countryNamesArr, setCountryNamesArr] = useState(null);
