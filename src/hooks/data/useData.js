@@ -1,37 +1,43 @@
 import { useEffect, useState } from "react";
-import { customizeCountries } from "./cleanData";
+import { customizeLocalData } from "./helpers/customizeLocalData";
+import { customizeApiData } from "./helpers/customizeApiData";
 import axios from "axios";
-// const URL = "https://restcountries.com/v3.1/"; // api not working anymore
-// const URL = "/countries-with-required-fields.json"; //using local json file
-const URL = "/data.json"; //using local json file
+const API_DATA_URL = "https://restcountries.com/v3.1/all?fields=name,population,region,capital,subregion,tld,languages,borders,flags,cca3";
+const LOCAL_DATA_URL = "/data.json"; //using local json file
 
 function useData() {
   const [countryNamesArr, setCountryNamesArr] = useState(null);
   const [allCountries, setAllCountries] = useState(null);
   const [codedNames, setCodedNames] = useState(null);
   const [apiError, setApiError] = useState(false);
+  const [localDataError, setLocalDataError] = useState(false);
+  const [url, setUrl] = useState(API_DATA_URL);
 
-  function updateData(data) {
-    const { namedCountriesMap, codedNamesMap, countryNamesArr } = customizeCountries(data);
+  function initCountries(data, customizeDataFunc) {
+    const { namedCountriesMap, codedNamesMap, countryNamesArr } = customizeDataFunc(data);
     setAllCountries(namedCountriesMap);
     setCodedNames(codedNamesMap);
     setCountryNamesArr(countryNamesArr);
   }
 
   useEffect(() => {
-    if (allCountries === null) {
+    if (allCountries === null || apiError) {
       axios
-        .get(URL, { headers: { "content-Type": "application/json", Accept: "application/json" } })
+        .get(url, { headers: { "content-Type": "application/json", Accept: "application/json" } })
         .then((res) => {
-          return updateData(res.data);
+          if (!res.data) {
+            throw new Error("No data from api");
+          }
+          initCountries(res.data, !apiError ? customizeApiData : customizeLocalData);
         })
         .catch((e) => {
-          setApiError(true);
+          !apiError ? setApiError(true) : setLocalDataError(true);
+          setUrl(LOCAL_DATA_URL);
         });
     }
-  }, [allCountries]);
+  }, [allCountries, apiError, url]);
 
-  return [allCountries, codedNames, countryNamesArr, apiError];
+  return [allCountries, codedNames, countryNamesArr, apiError, localDataError];
 }
 
 export default useData;

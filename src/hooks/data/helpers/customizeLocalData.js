@@ -7,6 +7,7 @@ const formatLanguages = (c) => {
   }
   return languages;
 };
+
 const formatTopLevelDomains = (c) => {
   let domains = c.topLevelDomain ? c.topLevelDomain : EMPTY_FIELD;
   if (domains !== EMPTY_FIELD) {
@@ -14,7 +15,8 @@ const formatTopLevelDomains = (c) => {
   }
   return domains;
 };
-export const customizeCountries = (countries) => {
+
+export const customizeLocalData = (countries) => {
   let namedCountriesMap = new Map();
   let codedNamesMap = new Map();
   let countryNamesArr = [];

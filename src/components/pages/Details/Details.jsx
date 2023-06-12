@@ -1,4 +1,4 @@
-import { Link, redirect, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { useContext, useEffect, useState } from "react";
 import { GlobalCtx } from "../../../context/GlobalCtx";
@@ -20,7 +20,7 @@ function Details() {
   }, [allCountries, countryName, codedNames]);
 
   if (allCountries === null) {
-    redirect("/");
+    navigate("/");
   }
 
   if (!country) {

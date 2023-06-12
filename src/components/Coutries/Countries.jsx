@@ -4,7 +4,7 @@ import { GlobalCtx } from "../../context/GlobalCtx";
 import { Link } from "react-router-dom";
 
 function Countries() {
-  const { allCountries, apiError, searchRegex, searchParams, filterRegion } = useContext(GlobalCtx);
+  const { allCountries, localDataError, searchRegex, searchParams, filterRegion } = useContext(GlobalCtx);
   const [displayCountries, setDisplayCountries] = useState(null);
 
   const isMatch = useCallback(
@@ -41,12 +41,8 @@ function Countries() {
     setDisplayCountries(searchAndFilter());
   }, [allCountries, filterRegion, searchAndFilter]);
 
-  if (apiError) {
-    return <h2>Sorry, can't connect to API...</h2>;
-  }
-
   if (displayCountries === null || allCountries === null) {
-    return <h2>Loading...</h2>;
+    return <h2>{localDataError ? "Sorry, can not get countries data..." : "Loading..."}</h2>;
   }
 
   if (searchRegex && displayCountries.length === 0) {
