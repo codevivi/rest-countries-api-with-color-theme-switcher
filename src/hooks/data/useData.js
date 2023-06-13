@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { customizeLocalData } from "./helpers/customizeLocalData";
 import { customizeApiData } from "./helpers/customizeApiData";
 import axios from "axios";
-const API_DATA_URL = "https://restcountries.com/v3.1/aall?fields=name,population,region,capital,subregion,tld,languages,borders,flags,cca3";
+const API_DATA_URL = "https://restcountries.com/v3.1/all?fields=name,population,region,capital,subregion,tld,languages,borders,flags,cca3";
 const LOCAL_DATA_URL = "/data.json"; //using local json file
 
 function useData() {
@@ -21,7 +21,7 @@ function useData() {
   }
 
   useEffect(() => {
-    if (allCountries === null || apiError) {
+    if (allCountries === null) {
       axios
         .get(url, { headers: { "content-Type": "application/json", Accept: "application/json" } })
         .then((res) => {
