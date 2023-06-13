@@ -21,32 +21,37 @@ const formatCapitals = (c) => {
 };
 
 export const customizeApiData = (countries) => {
-  let namedCountriesMap = new Map();
-  let codedNamesMap = new Map();
-  let countryNamesArr = [];
-  for (let i = 0; i < countries.length; i++) {
-    let c = countries[i];
-    codedNamesMap.set(c.cca3, c.name.common);
-    countryNamesArr.push(c.name.common);
-    let country = {
-      languages: c.languages ? Object.values(c.languages).join(", ") : EMPTY_FIELD,
-      topLevelDomain: formatTopLevelDomains(c),
-      capital: formatCapitals(c),
-      name: c.name.common,
-      nativeName: getNativeName(c),
-      population: c.population.toLocaleString(),
-      region: c.region,
-      subRegion: c.subregion,
-      flagUrl: c.flags.png,
-      flagSvgUrl: c.flags.svg ? c.flags.svg : c.flags.png,
-      flagAlt: c.flags.alt,
-      currencies: c.currencies,
-      borders: c.borders ? c.borders : [],
-      code: c.cca3,
-    };
-    namedCountriesMap.set(c.name.common, country);
-  }
-  countryNamesArr.sort((a, b) => a.name.localeCompare(b.name));
+  try {
+    let namedCountriesMap = new Map();
+    let codedNamesMap = new Map();
+    let countryNamesArr = [];
+    for (let i = 0; i < countries.length; i++) {
+      let c = countries[i];
+      codedNamesMap.set(c.cca3, c.name.common);
+      countryNamesArr.push(c.name.common);
+      let country = {
+        languages: c.languages ? Object.values(c.languages).join(", ") : EMPTY_FIELD,
+        topLevelDomain: formatTopLevelDomains(c),
+        capital: formatCapitals(c),
+        name: c.name.common,
+        nativeName: getNativeName(c),
+        population: c.population.toLocaleString(),
+        region: c.region,
+        subRegion: c.subregion,
+        flagUrl: c.flags.png,
+        flagSvgUrl: c.flags.svg ? c.flags.svg : c.flags.png,
+        flagAlt: c.flags.alt,
+        currencies: c.currencies,
+        borders: c.borders ? c.borders : [],
+        code: c.cca3,
+      };
+      namedCountriesMap.set(c.name.common, country);
+    }
+    namedCountriesMap = new Map([...namedCountriesMap.entries()].sort((a, b) => a[1].name.localeCompare(b[1].name)));
 
-  return { namedCountriesMap: namedCountriesMap, codedNamesMap: codedNamesMap, countryNamesArr: countryNamesArr };
+    return { namedCountriesMap: namedCountriesMap, codedNamesMap: codedNamesMap, countryNamesArr: countryNamesArr };
+  } catch (error) {
+    console.log(error);
+    throw new Error("Application error reading API data");
+  }
 };
