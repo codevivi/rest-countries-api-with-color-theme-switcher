@@ -42,7 +42,7 @@ function Countries() {
   }, [allCountries, filterRegion, searchAndFilter]);
 
   if (displayCountries === null || allCountries === null) {
-    return <h2>{localDataError ? "Sorry, can not get countries data..." : "Loading..."}</h2>;
+    return <h2>{localDataError ? "Application error. Sorry, can not get countries data..." : "Loading..."}</h2>;
   }
 
   if (searchRegex && displayCountries.length === 0) {

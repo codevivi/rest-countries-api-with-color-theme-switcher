@@ -46,7 +46,7 @@ export const customizeApiData = (countries) => {
     };
     namedCountriesMap.set(c.name.common, country);
   }
-  // countryNamesArr.sort((a, b) => a.localeCompare(b));
+  countryNamesArr.sort((a, b) => a.name.localeCompare(b.name));
 
   return { namedCountriesMap: namedCountriesMap, codedNamesMap: codedNamesMap, countryNamesArr: countryNamesArr };
 };
