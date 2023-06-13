@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { customizeCountries } from "./cleanData";
 import axios from "axios";
-// const URL = "https://restcountries.com/v3.1/"; // api not working anymore
-// const URL = "/countries-with-required-fields.json"; //using local json file
 const URL = "https://raw.githubusercontent.com/codevivi/rest-countries-api-with-color-theme-switcher/hashrouter/public/data.json"; //using local json file
 
 function useData() {
