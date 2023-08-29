@@ -51,7 +51,6 @@ export const customizeApiData = (countries) => {
 
     return { namedCountriesMap: namedCountriesMap, codedNamesMap: codedNamesMap, countryNamesArr: countryNamesArr };
   } catch (error) {
-    console.log(error);
     throw new Error("Application error reading API data");
   }
 };

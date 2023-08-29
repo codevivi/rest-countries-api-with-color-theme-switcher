@@ -1,9 +1,10 @@
 import "./_country.scss";
+import LazyImage from "./LazyImage";
 
-function Country({ country }) {
+function Country({ country, scrollPosition }) {
   return (
     <div className="grid-item bg country-card">
-      <img src={country.flagUrl} alt={country.flagAlt} />
+      <LazyImage src={country.flagUrl} alt={country.flagAlt} scrollPosition={scrollPosition} />
       <div className="body">
         <h2 className="title">{country.name}</h2>
         <p>

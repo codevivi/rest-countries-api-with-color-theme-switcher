@@ -1,9 +1,10 @@
 import { useCallback, useContext, useEffect, useState } from "react";
+import { trackWindowScroll } from "react-lazy-load-image-component";
 import Country from "./Country/Country";
 import { GlobalCtx } from "../../context/GlobalCtx";
 import { Link } from "react-router-dom";
 
-function Countries() {
+function Countries({ scrollPosition }) {
   const { allCountries, localDataError, searchRegex, searchParams, filterRegion } = useContext(GlobalCtx);
   const [displayCountries, setDisplayCountries] = useState(null);
 
@@ -53,11 +54,11 @@ function Countries() {
     <div className="grid-container">
       {displayCountries.map(([_, country]) => (
         <Link key={country.code} to={"/details/" + encodeURIComponent(country.name)} state={{ detailsFirstPath: "/details/" + country.name }}>
-          <Country country={country} />
+          <Country country={country} scrollPosition={scrollPosition} />
         </Link>
       ))}
     </div>
   );
 }
 
-export default Countries;
+export default trackWindowScroll(Countries);

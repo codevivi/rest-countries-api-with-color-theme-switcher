@@ -10,12 +10,20 @@
     line-height: 19px;
     letter-spacing: -0.015em;
   }
-  img {
+  .lazy-load-image-background {
     display: block;
     width: 100%;
     height: 160px;
-    object-fit: cover;
-    box-shadow: 1px 0 4px hsla(0, 0%, 52%, 0.226);
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: 1px 0 4px hsla(0, 0%, 52%, 0.226);
+    }
+  }
+  .lazy-load-image-background.blur {
+    filter: blur(10px);
   }
   .body {
     padding: 28px 25px;
